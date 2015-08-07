@@ -71,4 +71,9 @@ public abstract class HeaderFooterCecyclerAdapter<VH extends RecyclerView.ViewHo
 	protected boolean hasFooter() {
 		return recyclerFooter != null;
 	}
+
+	public interface RecyclerFooter<F> {
+		F onCreateFooterHolder(ViewGroup parent, int viewType);
+		void onBindFooterHolder(F holder, int position);
+	}
 }

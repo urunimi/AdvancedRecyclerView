@@ -116,9 +116,4 @@ public abstract class HeaderRecyclerAdapter<VH extends RecyclerView.ViewHolder, 
 		H onCreateHeaderHolder(ViewGroup parent, int viewType);
 		void onBindHeaderHolder(H holder, int position);
 	}
-
-	public interface RecyclerFooter<F> {
-		F onCreateFooterHolder(ViewGroup parent, int viewType);
-		void onBindFooterHolder(F holder, int position);
-	}
 }
