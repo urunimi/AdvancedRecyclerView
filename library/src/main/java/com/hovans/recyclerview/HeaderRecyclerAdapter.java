@@ -19,10 +19,6 @@ public abstract class HeaderRecyclerAdapter<VH extends RecyclerView.ViewHolder, 
 		this.recyclerHeader = recyclerHeader;
 	}
 
-	/**
-	 * Invokes onCreateHeaderViewHolder, onCreateItemHolder or onCreateFooterViewHolder methods
-	 * based on the view type param.
-	 */
 	@Override
 	public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 		RecyclerView.ViewHolder viewHolder;
@@ -34,10 +30,6 @@ public abstract class HeaderRecyclerAdapter<VH extends RecyclerView.ViewHolder, 
 		return viewHolder;
 	}
 
-	/**
-	 * Invokes onBindHeaderViewHolder, onBindItemHolder or onBindFooterViewHOlder methods based
-	 * on the position param.
-	 */
 	@Override
 	public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 		if (isHeaderPosition(position)) {
@@ -49,16 +41,6 @@ public abstract class HeaderRecyclerAdapter<VH extends RecyclerView.ViewHolder, 
 		}
 	}
 
-	/**
-	 * Returns the type associated to an item given a position passed as arguments. If the position
-	 * is related to a header item returns the constant TYPE_HEADER or TYPE_FOOTER if the position is
-	 * related to the footer, if not, returns TYPE_ITEM.
-	 *
-	 * If your application has to support different types override this method and provide your
-	 * implementation. Remember that TYPE_HEADER, TYPE_ITEM and TYPE_FOOTER are internal constants
-	 * can be used to identify an item given a position, try to use different values in your
-	 * application.
-	 */
 	@Override
 	public int getItemViewType(int position) {
 		int viewType = TYPE_ITEM;
@@ -68,11 +50,6 @@ public abstract class HeaderRecyclerAdapter<VH extends RecyclerView.ViewHolder, 
 		return viewType;
 	}
 
-	/**
-	 * Returns the items list size if there is no a header configured or the size taking into account
-	 * that if a header or a footer is configured the number of items returned is going to include
-	 * this elements.
-	 */
 	@Override
 	public int getItemCount() {
 		int size = getCount();
@@ -89,24 +66,14 @@ public abstract class HeaderRecyclerAdapter<VH extends RecyclerView.ViewHolder, 
 
 	protected abstract void onBindItemHolder(VH holder, int position);
 
-	/**
-	 * Returns true if the position type parameter passed as argument is equals to 0 and the adapter
-	 * has a not null header already configured.
-	 */
 	public boolean isHeaderPosition(int position) {
 		return hasHeader() && position == 0;
 	}
 
-	/**
-	 * Returns true if the view type parameter passed as argument is equals to TYPE_HEADER.
-	 */
 	protected boolean isHeaderType(int viewType) {
 		return viewType == TYPE_HEADER;
 	}
 
-	/**
-	 * Returns true if the header configured is not null.
-	 */
 	protected boolean hasHeader() {
 		return recyclerHeader != null;
 	}

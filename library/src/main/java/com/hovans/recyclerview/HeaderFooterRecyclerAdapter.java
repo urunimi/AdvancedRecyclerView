@@ -65,9 +65,6 @@ public abstract class HeaderFooterRecyclerAdapter<VH extends RecyclerView.ViewHo
 		return hasFooter() && position == lastPosition;
 	}
 
-	/**
-	 * Returns true if the footer configured is not null.
-	 */
 	protected boolean hasFooter() {
 		return recyclerFooter != null;
 	}
