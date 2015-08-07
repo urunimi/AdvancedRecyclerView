@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 /**
- * AdvancedRecyclerAdapter.java
+ * HeaderRecyclerAdapter.java
  *
  * @author Hovan Yoo
  */

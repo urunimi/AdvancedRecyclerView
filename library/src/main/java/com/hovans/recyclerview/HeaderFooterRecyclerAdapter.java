@@ -8,7 +8,7 @@ import android.view.ViewGroup;
  *
  * @author Hovan Yoo
  */
-public abstract class HeaderFooterCecyclerAdapter<VH extends RecyclerView.ViewHolder, H extends RecyclerView.ViewHolder, F extends RecyclerView.ViewHolder> extends HeaderRecyclerAdapter<VH, H> {
+public abstract class HeaderFooterRecyclerAdapter<VH extends RecyclerView.ViewHolder, H extends RecyclerView.ViewHolder, F extends RecyclerView.ViewHolder> extends HeaderRecyclerAdapter<VH, H> {
 
 	protected static final int TYPE_FOOTER = -3;
 
